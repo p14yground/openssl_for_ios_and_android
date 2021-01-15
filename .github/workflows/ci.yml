@@ -108,6 +108,9 @@ jobs:
           cd tools
           ./build-${{ matrix.tool }}-${{ matrix.component }}.sh ${{ matrix.arch }}
           cd ..
+          ls -al .
+          ls -al output/${{ matrix.tool }}
+          ls -al output/${{ matrix.tool }}/${{ matrix.component }}-${{ matrix.abi || matrix.arch }}
           mkdir -p "$product_dir/"{lib,include}
           mv "output/${{ matrix.tool }}/${{ matrix.component }}-${{ matrix.abi || matrix.arch }}/"{lib,include} "$product_dir/" || true
         if: always()
@@ -373,8 +376,8 @@ jobs:
           ./build-${{ matrix.tool }}-${{ matrix.component }}.sh ${{ matrix.arch }}
           cd ..
           ls -al .
-          ls -al output/android
-          ls -al output/android/${{ matrix.component }}-${{ matrix.abi || matrix.arch }}
+          ls -al output/${{ matrix.tool }}
+          ls -al output/${{ matrix.tool }}/${{ matrix.component }}-${{ matrix.abi || matrix.arch }}
           mkdir -p "$product_dir/"{lib,include}
           mv "output/${{ matrix.tool }}/${{ matrix.component }}-${{ matrix.abi || matrix.arch }}/"{lib,include} "$product_dir/" || true
         if: always()
