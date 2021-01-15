@@ -105,8 +105,9 @@ jobs:
           set
       - name: Build ${{ matrix.component }}-${{ matrix.abi || matrix.arch }} for ${{ matrix.tool }}
         run: |
+          set -x
           cd tools
-          ./build-${{ matrix.tool }}-${{ matrix.component }}.sh ${{ matrix.arch }}
+          ./build-${{ matrix.tool }}-${{ matrix.component }}.sh
           cd ..
           ls -al .
           ls -al output/${{ matrix.tool }}
@@ -190,7 +191,7 @@ jobs:
       - name: Build ${{ matrix.component }}-${{ matrix.abi || matrix.arch }} for ${{ matrix.target }}
         run: |
           cd tools
-          ./build-${{ matrix.target }}-${{ matrix.component }}.sh ${{ matrix.arch }}
+          ./build-${{ matrix.target }}-${{ matrix.component }}.sh
           cd ..
           mkdir -p "$product_dir/"{lib,include}
           mv "output/${{ matrix.target }}/${{ matrix.component }}-${{ matrix.abi || matrix.arch }}/"{lib,include} "$product_dir/" || true
@@ -271,7 +272,7 @@ jobs:
       - name: Build ${{ matrix.component }}-${{ matrix.abi || matrix.arch }} for ${{ matrix.target }}
         run: |
           cd tools
-          ./build-${{ matrix.target }}-${{ matrix.component }}.sh ${{ matrix.arch }}
+          ./build-${{ matrix.target }}-${{ matrix.component }}.sh
           cd ..
           mkdir -p "$product_dir/"{lib,include}
           mv "output/${{ matrix.target }}/${{ matrix.component }}-${{ matrix.abi || matrix.arch }}/"{lib,include} "$product_dir/" || true
@@ -372,8 +373,9 @@ jobs:
           set
       - name: Build ${{ matrix.component }}-${{ matrix.abi || matrix.arch }} for ${{ matrix.tool }}
         run: |
+          set -x
           cd tools
-          ./build-${{ matrix.tool }}-${{ matrix.component }}.sh ${{ matrix.arch }}
+          ./build-${{ matrix.tool }}-${{ matrix.component }}.sh
           cd ..
           ls -al .
           ls -al output/${{ matrix.tool }}
