@@ -49,22 +49,26 @@ jobs:
           # Android Configuration
           - target: android-arm
             tool: android
-            arch: arm-v7a
+            arch: arm
+            abi: armeabi-v7a
             api: 23
 
           - target: android-arm64
             tool: android
-            arch: arm64-v8a
+            arch: arm64
+            abi: arm64-v8a
             api: 23
 
           - target: android-x86
             tool: android
             arch: x86
+            abi: x86
             api: 23
 
           - target: android-x64
             tool: android
             arch: x86_64
+            abi: x86_64
             api: 23
 
           # OpenSSL version
@@ -89,6 +93,7 @@ jobs:
 
           echo "tool=${{ matrix.tool }}" >> $GITHUB_ENV
           echo "arch=${{ matrix.arch }}" >> $GITHUB_ENV
+          echo "abi=${{ matrix.abi }}" >> $GITHUB_ENV
           echo "sdk=${{ matrix.sdk }}" >> $GITHUB_ENV
           echo "api=${{ matrix.api }}" >> $GITHUB_ENV
           echo "platform=${{ matrix.platform }}" >> $GITHUB_ENV
@@ -104,7 +109,7 @@ jobs:
           ./build-${{ matrix.tool }}-${{ matrix.component }}.sh
           cd ..
           mkdir -p "$product_dir/"{lib,include}
-          mv "output/${{ matrix.tool }}/${{ matrix.component }}-${{ matrix.arch }}/"{lib,include} "$product_dir/" || true
+          mv "output/${{ matrix.tool }}/${{ matrix.component }}-${{ matrix.abi || matrix.arch }}/"{lib,include} "$product_dir/" || true
         if: always()
       - name: Upload Binaries
         uses: actions/upload-artifact@v1
@@ -144,7 +149,8 @@ jobs:
 
           # Android Configuration
           - target: android
-            arch: arm64-v8a
+            arch: arm64
+            abi: arm64-v8a
             api: 23
 
           # nghttp2 version
@@ -168,6 +174,7 @@ jobs:
           echo "ANDROID_NDK_ROOT=$ANDROID_NDK_ROOT" >> $GITHUB_ENV
 
           echo "arch=${{ matrix.arch }}" >> $GITHUB_ENV
+          echo "abi=${{ matrix.abi }}" >> $GITHUB_ENV
           echo "sdk=${{ matrix.sdk }}" >> $GITHUB_ENV
           echo "api=${{ matrix.api }}" >> $GITHUB_ENV
           echo "platform=${{ matrix.platform }}" >> $GITHUB_ENV
@@ -183,7 +190,7 @@ jobs:
           ./build-${{ matrix.target }}-${{ matrix.component }}.sh
           cd ..
           mkdir -p "$product_dir/"{lib,include}
-          mv "output/${{ matrix.target }}/${{ matrix.component }}-${{ matrix.arch }}/"{lib,include} "$product_dir/" || true
+          mv "output/${{ matrix.target }}/${{ matrix.component }}-${{ matrix.abi || matrix.arch }}/"{lib,include} "$product_dir/" || true
         if: always()
       - name: Upload Binaries
         uses: actions/upload-artifact@v1
@@ -223,7 +230,8 @@ jobs:
 
           # Android Configuration
           - target: android
-            arch: arm64-v8a
+            arch: arm64
+            abi: arm64-v8a
             api: 23
 
           # cURL version
@@ -247,6 +255,7 @@ jobs:
           echo "ANDROID_NDK_ROOT=$ANDROID_NDK_ROOT" >> $GITHUB_ENV
 
           echo "arch=${{ matrix.arch }}" >> $GITHUB_ENV
+          echo "abi=${{ matrix.abi }}" >> $GITHUB_ENV
           echo "sdk=${{ matrix.sdk }}" >> $GITHUB_ENV
           echo "api=${{ matrix.api }}" >> $GITHUB_ENV
           echo "platform=${{ matrix.platform }}" >> $GITHUB_ENV
@@ -262,7 +271,7 @@ jobs:
           ./build-${{ matrix.target }}-${{ matrix.component }}.sh
           cd ..
           mkdir -p "$product_dir/"{lib,include}
-          mv "output/${{ matrix.target }}/${{ matrix.component }}-${{ matrix.arch }}/"{lib,include} "$product_dir/" || true
+          mv "output/${{ matrix.target }}/${{ matrix.component }}-${{ matrix.abi || matrix.arch }}/"{lib,include} "$product_dir/" || true
         if: always()
       - name: Upload Binaries
         uses: actions/upload-artifact@v1
@@ -304,22 +313,26 @@ jobs:
           # Android Configuration
           - target: android-arm
             tool: android
-            arch: arm-v7a
+            arch: arm
+            abi: armeabi-v7a
             api: 23
 
           - target: android-arm64
             tool: android
-            arch: arm64-v8a
+            arch: arm64
+            abi: arm64-v8a
             api: 23
 
           - target: android-x86
             tool: android
             arch: x86
+            abi: x86
             api: 23
 
           - target: android-x64
             tool: android
             arch: x86_64
+            abi: x86_64
             api: 23
 
           # GMP version
@@ -344,6 +357,7 @@ jobs:
 
           echo "tool=${{ matrix.tool }}" >> $GITHUB_ENV
           echo "arch=${{ matrix.arch }}" >> $GITHUB_ENV
+          echo "abi=${{ matrix.abi }}" >> $GITHUB_ENV
           echo "sdk=${{ matrix.sdk }}" >> $GITHUB_ENV
           echo "api=${{ matrix.api }}" >> $GITHUB_ENV
           echo "platform=${{ matrix.platform }}" >> $GITHUB_ENV
@@ -359,7 +373,7 @@ jobs:
           ./build-${{ matrix.tool }}-${{ matrix.component }}.sh
           cd ..
           mkdir -p "$product_dir/"{lib,include}
-          mv "output/${{ matrix.tool }}/${{ matrix.component }}-${{ matrix.arch }}/"{lib,include} "$product_dir/" || true
+          mv "output/${{ matrix.tool }}/${{ matrix.component }}-${{ matrix.abi || matrix.arch }}/"{lib,include} "$product_dir/" || true
         if: always()
       - name: Upload Binaries
         uses: actions/upload-artifact@v1
