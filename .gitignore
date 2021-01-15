@@ -14,5 +14,6 @@ output/
 nghttp2-*
 openssl-*
 curl-*
+gmp-*
 
 *.a
