@@ -369,6 +369,12 @@ jobs:
           ./build-${{ matrix.tool }}-${{ matrix.component }}.sh ${{ matrix.arch }}
           cd ..
           mkdir -p "$product_dir/"{lib,include}
+          ls -al ..
+          ls -al .
+          ls -al output
+          ls -al output/${{ matrix.tool }}
+          ls -al output/${{ matrix.tool }}/${{ matrix.component }}-${{ matrix.abi || matrix.arch }}
+          ls -al output/${{ matrix.tool }}/${{ matrix.component }}-${{ matrix.abi || matrix.arch }}/lib
           mv "output/${{ matrix.tool }}/${{ matrix.component }}-${{ matrix.abi || matrix.arch }}/"{lib,include} "$product_dir/" || true
         if: always()
       - name: Upload Binaries
