@@ -106,7 +106,7 @@ jobs:
       - name: Build ${{ matrix.component }}-${{ matrix.abi || matrix.arch }} for ${{ matrix.tool }}
         run: |
           cd tools
-          ./build-${{ matrix.tool }}-${{ matrix.component }}.sh ${{ matrix.arch }}
+          ./build-${{ matrix.tool }}-${{ matrix.component }}.sh ${{ matrix.abi }}
           cd ..
           mkdir -p "$product_dir/"{lib,include}
           mv "output/${{ matrix.tool }}/${{ matrix.component }}-${{ matrix.abi || matrix.arch }}/"{lib,include} "$product_dir/" || true
@@ -187,7 +187,7 @@ jobs:
       - name: Build ${{ matrix.component }}-${{ matrix.abi || matrix.arch }} for ${{ matrix.target }}
         run: |
           cd tools
-          ./build-${{ matrix.target }}-${{ matrix.component }}.sh ${{ matrix.arch }}
+          ./build-${{ matrix.target }}-${{ matrix.component }}.sh ${{ matrix.abi }}
           cd ..
           mkdir -p "$product_dir/"{lib,include}
           mv "output/${{ matrix.target }}/${{ matrix.component }}-${{ matrix.abi || matrix.arch }}/"{lib,include} "$product_dir/" || true
@@ -268,7 +268,7 @@ jobs:
       - name: Build ${{ matrix.component }}-${{ matrix.abi || matrix.arch }} for ${{ matrix.target }}
         run: |
           cd tools
-          ./build-${{ matrix.target }}-${{ matrix.component }}.sh ${{ matrix.arch }}
+          ./build-${{ matrix.target }}-${{ matrix.component }}.sh ${{ matrix.abi }}
           cd ..
           mkdir -p "$product_dir/"{lib,include}
           mv "output/${{ matrix.target }}/${{ matrix.component }}-${{ matrix.abi || matrix.arch }}/"{lib,include} "$product_dir/" || true
@@ -370,7 +370,7 @@ jobs:
       - name: Build ${{ matrix.component }}-${{ matrix.abi || matrix.arch }} for ${{ matrix.tool }}
         run: |
           cd tools
-          ./build-${{ matrix.tool }}-${{ matrix.component }}.sh ${{ matrix.arch }}
+          ./build-${{ matrix.tool }}-${{ matrix.component }}.sh ${{ matrix.abi }}
           cd ..
           mkdir -p "$product_dir/"{lib,include}
           mv "output/${{ matrix.tool }}/${{ matrix.component }}-${{ matrix.abi || matrix.arch }}/"{lib,include} "$product_dir/" || true
