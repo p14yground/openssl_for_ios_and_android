@@ -14,6 +14,8 @@
 <tr><td></td><td></td><td>android</td><td>armeabi-v7a arm64-v8a x86 x86_64 </td><td>aae1672</td></tr>
 <tr><td>curl</td><td>7.68.0</td><td>ios</td><td>armv7 arm64 arm64e x86_64 </td><td>aae1672</td></tr>
 <tr><td></td><td></td><td>android</td><td>armeabi-v7a arm64-v8a x86 x86_64 </td><td>aae1672</td></tr>
+<tr><td>gmp</td><td>6.2.1</td><td>ios</td><td>armv7 arm64 arm64e x86_64 </td><td>aae1672</td></tr>
+<tr><td></td><td></td><td>android</td><td>armeabi-v7a arm64-v8a x86 x86_64 </td><td>aae1672</td></tr>
 </tbody>
 </table>
 
@@ -42,6 +44,11 @@ If you do not want to build it by yourself, you could download our prebuilt libr
  - [curl-7.68.0.tar.gz](https://curl.haxx.se/download/curl-7.68.0.tar.gz)
  - [curl-7.74.0.tar.gz](https://curl.haxx.se/download/curl-7.74.0.tar.gz)
  - [https://github.com/curl/curl](https://github.com/curl/curl)
+
+## GMP Version
+
+  - [gmp-6.2.1.tar.xz](https://gmplib.org/download/gmp/gmp-6.2.1.tar.xz)
+  - [https://gmplib.org](https://gmplib.org)
 
 ## Android NDK Version
 
