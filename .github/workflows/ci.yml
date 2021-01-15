@@ -91,11 +91,6 @@ jobs:
           export ANDROID_NDK_ROOT=${ANDROID_SDK_ROOT}/ndk-bundle
           echo "ANDROID_NDK_ROOT=$ANDROID_NDK_ROOT" >> $GITHUB_ENV
 
-          echo "tool=${{ matrix.tool }}" >> $GITHUB_ENV
-          echo "arch=${{ matrix.arch }}" >> $GITHUB_ENV
-          echo "sdk=${{ matrix.sdk }}" >> $GITHUB_ENV
-          echo "api=${{ matrix.api }}" >> $GITHUB_ENV
-          echo "platform=${{ matrix.platform }}" >> $GITHUB_ENV
           echo "version=${{ matrix.version }}" >> $GITHUB_ENV
 
           echo "product_dir=${{ matrix.component }}_${{ matrix.version }}-${{ matrix.tool }}-${{ matrix.arch }}" >> $GITHUB_ENV
@@ -172,10 +167,6 @@ jobs:
           export ANDROID_NDK_ROOT=${ANDROID_SDK_ROOT}/ndk-bundle
           echo "ANDROID_NDK_ROOT=$ANDROID_NDK_ROOT" >> $GITHUB_ENV
 
-          echo "arch=${{ matrix.arch }}" >> $GITHUB_ENV
-          echo "sdk=${{ matrix.sdk }}" >> $GITHUB_ENV
-          echo "api=${{ matrix.api }}" >> $GITHUB_ENV
-          echo "platform=${{ matrix.platform }}" >> $GITHUB_ENV
           echo "version=${{ matrix.version }}" >> $GITHUB_ENV
 
           echo "product_dir=${{ matrix.component }}_${{ matrix.version }}-${{ matrix.target }}-${{ matrix.arch }}" >> $GITHUB_ENV
@@ -252,10 +243,6 @@ jobs:
           export ANDROID_NDK_ROOT=${ANDROID_SDK_ROOT}/ndk-bundle
           echo "ANDROID_NDK_ROOT=$ANDROID_NDK_ROOT" >> $GITHUB_ENV
 
-          echo "arch=${{ matrix.arch }}" >> $GITHUB_ENV
-          echo "sdk=${{ matrix.sdk }}" >> $GITHUB_ENV
-          echo "api=${{ matrix.api }}" >> $GITHUB_ENV
-          echo "platform=${{ matrix.platform }}" >> $GITHUB_ENV
           echo "version=${{ matrix.version }}" >> $GITHUB_ENV
 
           echo "product_dir=${{ matrix.component }}_${{ matrix.version }}-${{ matrix.target }}-${{ matrix.arch }}" >> $GITHUB_ENV
@@ -352,11 +339,6 @@ jobs:
           export ANDROID_NDK_ROOT=${ANDROID_SDK_ROOT}/ndk-bundle
           echo "ANDROID_NDK_ROOT=$ANDROID_NDK_ROOT" >> $GITHUB_ENV
 
-          echo "tool=${{ matrix.tool }}" >> $GITHUB_ENV
-          echo "arch=${{ matrix.arch }}" >> $GITHUB_ENV
-          echo "sdk=${{ matrix.sdk }}" >> $GITHUB_ENV
-          echo "api=${{ matrix.api }}" >> $GITHUB_ENV
-          echo "platform=${{ matrix.platform }}" >> $GITHUB_ENV
           echo "version=${{ matrix.version }}" >> $GITHUB_ENV
 
           echo "product_dir=${{ matrix.component }}_${{ matrix.version }}-${{ matrix.tool }}-${{ matrix.arch }}" >> $GITHUB_ENV
