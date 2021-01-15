@@ -62,7 +62,7 @@ function get_android_arch() {
   local common_arch=$1
   case ${common_arch} in
   arm)
-    echo "arm-v7a"
+    echo "armeabi-v7a"
     ;;
   arm64)
     echo "arm64-v8a"
@@ -79,7 +79,7 @@ function get_android_arch() {
 function get_target_build() {
   local arch=$1
   case ${arch} in
-  arm-v7a)
+  armeabi-v7a)
     echo "arm"
     ;;
   arm64-v8a)
@@ -97,7 +97,7 @@ function get_target_build() {
 function get_build_host_internal() {
   local arch=$1
   case ${arch} in
-  arm-v7a | arm-v7a-neon)
+  armeabi-v7a | armeabi-v7a-neon)
     echo "arm-linux-androideabi"
     ;;
   arm64-v8a)
@@ -121,7 +121,7 @@ function get_clang_target_host() {
   local arch=$1
   local api=$2
   case ${arch} in
-  arm-v7a | arm-v7a-neon)
+  armeabi-v7a | armeabi-v7a-neon)
     echo "armv7a-linux-androideabi${api}"
     ;;
   arm64-v8a)
@@ -174,7 +174,7 @@ function set_android_cpu_feature() {
   local arch=$(get_android_arch $2)
   local api=$3
   case ${arch} in
-  arm-v7a | arm-v7a-neon)
+  armeabi-v7a | armeabi-v7a-neon)
     export CFLAGS="-march=armv7-a -mfpu=vfpv3-d16 -mfloat-abi=softfp -Wno-unused-function -fno-integrated-as -fstrict-aliasing -fPIC -DANDROID -D__ANDROID_API__=${api} -Os -ffunction-sections -fdata-sections $(get_common_includes)"
     export CXXFLAGS="-std=c++14 -Os -ffunction-sections -fdata-sections"
     export LDFLAGS="-march=armv7-a -mfpu=vfpv3-d16 -mfloat-abi=softfp -Wl,--fix-cortex-a8 -Wl,--gc-sections -Os -ffunction-sections -fdata-sections $(get_common_linked_libraries ${api} ${arch})"
