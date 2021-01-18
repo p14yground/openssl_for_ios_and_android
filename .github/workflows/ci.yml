@@ -91,7 +91,6 @@ jobs:
           export ANDROID_NDK_ROOT=${ANDROID_SDK_ROOT}/ndk-bundle
           echo "ANDROID_NDK_ROOT=$ANDROID_NDK_ROOT" >> $GITHUB_ENV
 
-          echo "sdk=${{ matrix.sdk }}" >> $GITHUB_ENV
           echo "api=${{ matrix.api }}" >> $GITHUB_ENV
           echo "platform=${{ matrix.platform }}" >> $GITHUB_ENV
           echo "version=${{ matrix.version }}" >> $GITHUB_ENV
@@ -104,7 +103,7 @@ jobs:
         run: |
           set -x
           cd tools
-          ./build-${{ matrix.tool }}-${{ matrix.component }}.sh ${{ matrix.arch }}
+          ./build-${{ matrix.tool }}-${{ matrix.component }}.sh ${{ matrix.arch }} ${{ matrix.sdk }} ${{ matrix.platform }}
           cd ..
           ls -al .
           ls -al output/${{ matrix.tool }}
@@ -174,7 +173,6 @@ jobs:
           export ANDROID_NDK_ROOT=${ANDROID_SDK_ROOT}/ndk-bundle
           echo "ANDROID_NDK_ROOT=$ANDROID_NDK_ROOT" >> $GITHUB_ENV
 
-          echo "sdk=${{ matrix.sdk }}" >> $GITHUB_ENV
           echo "api=${{ matrix.api }}" >> $GITHUB_ENV
           echo "platform=${{ matrix.platform }}" >> $GITHUB_ENV
           echo "version=${{ matrix.version }}" >> $GITHUB_ENV
@@ -186,7 +184,7 @@ jobs:
       - name: Build ${{ matrix.component }}-${{ matrix.abi || matrix.arch }} for ${{ matrix.target }}
         run: |
           cd tools
-          ./build-${{ matrix.target }}-${{ matrix.component }}.sh ${{ matrix.arch }}
+          ./build-${{ matrix.target }}-${{ matrix.component }}.sh ${{ matrix.arch }} ${{ matrix.sdk }} ${{ matrix.platform }}
           cd ..
           mkdir -p "$product_dir/"{lib,include}
           mv "output/${{ matrix.target }}/${{ matrix.component }}-${{ matrix.abi || matrix.arch }}/"{lib,include} "$product_dir/" || true
@@ -253,7 +251,6 @@ jobs:
           export ANDROID_NDK_ROOT=${ANDROID_SDK_ROOT}/ndk-bundle
           echo "ANDROID_NDK_ROOT=$ANDROID_NDK_ROOT" >> $GITHUB_ENV
 
-          echo "sdk=${{ matrix.sdk }}" >> $GITHUB_ENV
           echo "api=${{ matrix.api }}" >> $GITHUB_ENV
           echo "platform=${{ matrix.platform }}" >> $GITHUB_ENV
           echo "version=${{ matrix.version }}" >> $GITHUB_ENV
@@ -265,7 +262,7 @@ jobs:
       - name: Build ${{ matrix.component }}-${{ matrix.abi || matrix.arch }} for ${{ matrix.target }}
         run: |
           cd tools
-          ./build-${{ matrix.target }}-${{ matrix.component }}.sh ${{ matrix.arch }}
+          ./build-${{ matrix.target }}-${{ matrix.component }}.sh ${{ matrix.arch }} ${{ matrix.sdk }} ${{ matrix.platform }}
           cd ..
           mkdir -p "$product_dir/"{lib,include}
           mv "output/${{ matrix.target }}/${{ matrix.component }}-${{ matrix.abi || matrix.arch }}/"{lib,include} "$product_dir/" || true
@@ -352,7 +349,6 @@ jobs:
           export ANDROID_NDK_ROOT=${ANDROID_SDK_ROOT}/ndk-bundle
           echo "ANDROID_NDK_ROOT=$ANDROID_NDK_ROOT" >> $GITHUB_ENV
 
-          echo "sdk=${{ matrix.sdk }}" >> $GITHUB_ENV
           echo "api=${{ matrix.api }}" >> $GITHUB_ENV
           echo "platform=${{ matrix.platform }}" >> $GITHUB_ENV
           echo "version=${{ matrix.version }}" >> $GITHUB_ENV
@@ -365,7 +361,7 @@ jobs:
         run: |
           set -x
           cd tools
-          ./build-${{ matrix.tool }}-${{ matrix.component }}.sh ${{ matrix.arch }}
+          ./build-${{ matrix.tool }}-${{ matrix.component }}.sh ${{ matrix.arch }} ${{ matrix.sdk }} ${{ matrix.platform }}
           cd ..
           ls -al .
           ls -al output/${{ matrix.tool }}
