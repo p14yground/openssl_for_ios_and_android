@@ -104,10 +104,8 @@ jobs:
           cd tools
           ./build-${{ matrix.tool }}-${{ matrix.component }}.sh ${{ matrix.arch }} ${{ matrix.sdk }} ${{ matrix.platform }}
           cd ..
-          ls -al .
-          ls -al output/${{ matrix.tool }}
-          ls -al output/${{ matrix.tool }}/${{ matrix.component }}-${{ matrix.abi || matrix.arch }}
           mkdir -p "$product_dir/"{lib,include}
+          [ ! -d "output/${{ matrix.tool }}/${{ matrix.component }}-${{ matrix.abi || matrix.arch }}/include" ] && cat  "output/${{ matrix.tool }}/${{ matrix.component }}-${{ matrix.abi || matrix.arch }}/log/${{ matrix.abi || matrix.arch }}.log"
           mv "output/${{ matrix.tool }}/${{ matrix.component }}-${{ matrix.abi || matrix.arch }}/"{lib,include} "$product_dir/"
         if: always()
       - name: Upload Binaries
@@ -185,6 +183,7 @@ jobs:
           ./build-${{ matrix.target }}-${{ matrix.component }}.sh ${{ matrix.arch }} ${{ matrix.sdk }} ${{ matrix.platform }}
           cd ..
           mkdir -p "$product_dir/"{lib,include}
+          [ ! -d "output/${{ matrix.tool }}/${{ matrix.component }}-${{ matrix.abi || matrix.arch }}/include" ] && cat  "output/${{ matrix.tool }}/${{ matrix.component }}-${{ matrix.abi || matrix.arch }}/log/${{ matrix.abi || matrix.arch }}.log"
           mv "output/${{ matrix.target }}/${{ matrix.component }}-${{ matrix.abi || matrix.arch }}/"{lib,include} "$product_dir/"
         if: always()
       - name: Upload Binaries
@@ -262,6 +261,7 @@ jobs:
           ./build-${{ matrix.target }}-${{ matrix.component }}.sh ${{ matrix.arch }} ${{ matrix.sdk }} ${{ matrix.platform }}
           cd ..
           mkdir -p "$product_dir/"{lib,include}
+          [ ! -d "output/${{ matrix.tool }}/${{ matrix.component }}-${{ matrix.abi || matrix.arch }}/include" ] && cat  "output/${{ matrix.tool }}/${{ matrix.component }}-${{ matrix.abi || matrix.arch }}/log/${{ matrix.abi || matrix.arch }}.log"
           mv "output/${{ matrix.target }}/${{ matrix.component }}-${{ matrix.abi || matrix.arch }}/"{lib,include} "$product_dir/" || true
         if: always()
       - name: Upload Binaries
@@ -359,10 +359,8 @@ jobs:
           cd tools
           ./build-${{ matrix.tool }}-${{ matrix.component }}.sh ${{ matrix.arch }} ${{ matrix.sdk }} ${{ matrix.platform }}
           cd ..
-          ls -al .
-          ls -al output/${{ matrix.tool }}
-          ls -al output/${{ matrix.tool }}/${{ matrix.component }}-${{ matrix.abi || matrix.arch }}
           mkdir -p "$product_dir/"{lib,include}
+          [ ! -d "output/${{ matrix.tool }}/${{ matrix.component }}-${{ matrix.abi || matrix.arch }}/include" ] && cat  "output/${{ matrix.tool }}/${{ matrix.component }}-${{ matrix.abi || matrix.arch }}/log/${{ matrix.abi || matrix.arch }}.log"
           mv "output/${{ matrix.tool }}/${{ matrix.component }}-${{ matrix.abi || matrix.arch }}/"{lib,include} "$product_dir/"
         if: always()
       - name: Upload Binaries
