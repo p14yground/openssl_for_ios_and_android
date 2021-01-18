@@ -92,7 +92,6 @@ jobs:
           echo "ANDROID_NDK_ROOT=$ANDROID_NDK_ROOT" >> $GITHUB_ENV
 
           echo "api=${{ matrix.api }}" >> $GITHUB_ENV
-          echo "platform=${{ matrix.platform }}" >> $GITHUB_ENV
           echo "version=${{ matrix.version }}" >> $GITHUB_ENV
 
           echo "product_dir=${{ matrix.component }}_${{ matrix.version }}-${{ matrix.tool }}-${{ matrix.arch }}" >> $GITHUB_ENV
@@ -174,7 +173,6 @@ jobs:
           echo "ANDROID_NDK_ROOT=$ANDROID_NDK_ROOT" >> $GITHUB_ENV
 
           echo "api=${{ matrix.api }}" >> $GITHUB_ENV
-          echo "platform=${{ matrix.platform }}" >> $GITHUB_ENV
           echo "version=${{ matrix.version }}" >> $GITHUB_ENV
 
           echo "product_dir=${{ matrix.component }}_${{ matrix.version }}-${{ matrix.target }}-${{ matrix.arch }}" >> $GITHUB_ENV
@@ -252,7 +250,6 @@ jobs:
           echo "ANDROID_NDK_ROOT=$ANDROID_NDK_ROOT" >> $GITHUB_ENV
 
           echo "api=${{ matrix.api }}" >> $GITHUB_ENV
-          echo "platform=${{ matrix.platform }}" >> $GITHUB_ENV
           echo "version=${{ matrix.version }}" >> $GITHUB_ENV
 
           echo "product_dir=${{ matrix.component }}_${{ matrix.version }}-${{ matrix.target }}-${{ matrix.arch }}" >> $GITHUB_ENV
@@ -350,7 +347,6 @@ jobs:
           echo "ANDROID_NDK_ROOT=$ANDROID_NDK_ROOT" >> $GITHUB_ENV
 
           echo "api=${{ matrix.api }}" >> $GITHUB_ENV
-          echo "platform=${{ matrix.platform }}" >> $GITHUB_ENV
           echo "version=${{ matrix.version }}" >> $GITHUB_ENV
 
           echo "product_dir=${{ matrix.component }}_${{ matrix.version }}-${{ matrix.tool }}-${{ matrix.arch }}" >> $GITHUB_ENV
