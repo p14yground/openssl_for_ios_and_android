@@ -73,7 +73,7 @@ jobs:
 
           # OpenSSL version
           - component: openssl
-            version: "1.1.1d"
+            version: "1.1.1i"
 
       fail-fast: false
 
@@ -108,7 +108,7 @@ jobs:
           ls -al output/${{ matrix.tool }}
           ls -al output/${{ matrix.tool }}/${{ matrix.component }}-${{ matrix.abi || matrix.arch }}
           mkdir -p "$product_dir/"{lib,include}
-          mv "output/${{ matrix.tool }}/${{ matrix.component }}-${{ matrix.abi || matrix.arch }}/"{lib,include} "$product_dir/" || true
+          mv "output/${{ matrix.tool }}/${{ matrix.component }}-${{ matrix.abi || matrix.arch }}/"{lib,include} "$product_dir/"
         if: always()
       - name: Upload Binaries
         uses: actions/upload-artifact@v1
@@ -185,7 +185,7 @@ jobs:
           ./build-${{ matrix.target }}-${{ matrix.component }}.sh ${{ matrix.arch }} ${{ matrix.sdk }} ${{ matrix.platform }}
           cd ..
           mkdir -p "$product_dir/"{lib,include}
-          mv "output/${{ matrix.target }}/${{ matrix.component }}-${{ matrix.abi || matrix.arch }}/"{lib,include} "$product_dir/" || true
+          mv "output/${{ matrix.target }}/${{ matrix.component }}-${{ matrix.abi || matrix.arch }}/"{lib,include} "$product_dir/"
         if: always()
       - name: Upload Binaries
         uses: actions/upload-artifact@v1
@@ -363,7 +363,7 @@ jobs:
           ls -al output/${{ matrix.tool }}
           ls -al output/${{ matrix.tool }}/${{ matrix.component }}-${{ matrix.abi || matrix.arch }}
           mkdir -p "$product_dir/"{lib,include}
-          mv "output/${{ matrix.tool }}/${{ matrix.component }}-${{ matrix.abi || matrix.arch }}/"{lib,include} "$product_dir/" || true
+          mv "output/${{ matrix.tool }}/${{ matrix.component }}-${{ matrix.abi || matrix.arch }}/"{lib,include} "$product_dir/"
         if: always()
       - name: Upload Binaries
         uses: actions/upload-artifact@v1
