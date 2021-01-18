@@ -69,7 +69,7 @@ function configure_make() {
     pushd .
     cd "${LIB_NAME}"
 
-    if [[ $version == "1.1.1i"]]; then
+    if [[ $version == "1.1.1i" ]]; then
         wget https://github.com/openssl/openssl/pull/13694.patch && \
         git apply 13694.patch
     fi
