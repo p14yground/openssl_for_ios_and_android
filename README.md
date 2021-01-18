@@ -8,7 +8,7 @@
 <tr><td>library</td><td>version</td><td>platform support</td><td>arch support</td><td>pull commit</td></tr>
 </thead>
 <tbody>
-<tr><td>openssl</td><td>1.1.1d</td><td>ios</td><td>armv7 arm64 arm64e x86_64 </td><td>aae1672</td></tr>
+<tr><td>openssl</td><td>1.1.1i</td><td>ios</td><td>armv7 arm64 arm64e x86_64 </td><td>aae1672</td></tr>
 <tr><td></td><td></td><td>android</td><td>armeabi-v7a arm64-v8a x86 x86_64 </td><td>aae1672</td></tr>
 <tr><td>nghttp2</td><td>1.40.0</td><td>ios</td><td>armv7 arm64 arm64e x86x86_64 </td><td>aae1672</td></tr>
 <tr><td></td><td></td><td>android</td><td>armeabi-v7a arm64-v8a x86 x86_64 </td><td>aae1672</td></tr>

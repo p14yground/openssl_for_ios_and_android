@@ -69,6 +69,11 @@ function configure_make() {
     pushd .
     cd "${LIB_NAME}"
 
+    if [[ $version == "1.1.1i"]]; then
+        wget https://github.com/openssl/openssl/pull/13694.patch && \
+        git apply 13694.patch
+    fi
+
     PREFIX_DIR="${pwd_path}/../output/android/openssl-${ABI}"
     if [ -d "${PREFIX_DIR}" ]; then
         rm -fr "${PREFIX_DIR}"
