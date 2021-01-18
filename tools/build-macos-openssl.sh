@@ -21,7 +21,7 @@ set -u
 source ./build-macos-common.sh
 
 if [ -z ${version+x} ]; then 
-  version="1.1.1d"
+  version="1.1.1i"
 fi
 echo $version
 
